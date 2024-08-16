@@ -1,10 +1,17 @@
 {
   "name": "new-food-app",
   "version": "1.0.0",
+  "homepage": "https://Abdul-rah-code.github.io/react-project",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx parcel index.html",
-    "build": "npx parcel build index.html"
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
+    "clear-build-cache": "rm -rf .cache/ dist/",
+    "dev": "parcel index.html",
+    "build": " parcel build index.html --public-url ./",
+    "format": "prettier --write \".{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +23,7 @@
     "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "process": "^0.11.10"
   }
 }
